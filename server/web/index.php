@@ -1,5 +1,4 @@
 <?php
-	include 'db.php';
 	ob_start();
  ?>
 
@@ -17,12 +16,18 @@
 			<div id="header">
 				<h1>SKAP</h1>
 				<h6>SmartKey Administration Panel</h6>
-				<!--<?php/*
-					//$datab = getConnection('172.16.105.242', 'root', 'a367908', 'smartkey');
-					exit;
+				<?php
+					$datab = mysqli_connect('localhost', 'smarktey', '123456', 'smartkey') or die("Can't Connect!");
 					$result	 = mysqli_query($db, "SELECT * FROM `skap`") or die("Can't execute query!");
-					echo '<table border="1">';
-					while ($line = mysqli_fetch_array($result, MYSQL_ASSOC)) {
+					echo <<< EOT
+<table border="1">
+<tr>
+<th>Datum/Zeit</th>
+<th>Bild</th>
+<th>Fehlgeschlagen</th>
+</tr>
+EOT;
+					while ($line = mysqli_fetch_array($result, MYSQL_ASSOC)) {						
 					  echo "<tr>";
 					  echo "<td>". $line['time'] . "</td>";
 					  echo "<td>". $line['img_url'] . "</td>";
@@ -33,7 +38,7 @@
 
 					mysqli_free_result($result);
 
-				*/ ?> -->
+				?>
 				<table>
 					<tr>
 							<th>Datum/Zeit</th>
