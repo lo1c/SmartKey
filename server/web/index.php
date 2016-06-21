@@ -17,7 +17,7 @@
 				<h1>SKAP</h1>
 				<h6>SmartKey Administration Panel</h6>
 				<?php
-					$datab = mysqli_connect('5.230.10.116', 'smartkey', '123456', 'smartkey') or die("Can't Connect!");
+					$datab = mysqli_connect('host', 'user', 'passw', 'db') or die("Can't Connect!");
 					$result	 = mysqli_query($datab, "SELECT * FROM `skap`") or die("Can't execute query!");
 					echo '
 							<table border="1">
